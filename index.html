@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto SGR</title>
+    <link rel="icon" type="image/svg+xml" href="foto.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo SGR" class="logo">
+        <h1>Sistema de Gestion de Recetas</h1>
+        <p class="tagline">Te ayudamos a calcular las ganancias de tu negocio</p>
+    </header>
+
+    <main>
+        <!-- Flip aplicado aquí -->
+        <section class="intro flip-container">
+            <div class="flip-card">
+                <div class="flip-front">
+                    <h2>¿Qué es SGR?</h2>
+                    <p class="sgr-texto">
+                        SGR nació para resolver un desafío real en la panadería 
+                        <strong>"Pan de Yuca Qué Rico"</strong>: Que era conocer con exactitud si los productos generaban 
+                        <strong>ganancias o pérdidas</strong>.  
+                        <br>
+                        Lo que empezó como una solución local, hoy está diseñado para <strong>cualquier panadería o 
+                        negocio del sector  de producción de alimentos </strong> que busque mejorar su rentabilidad.  
+                    <br> <strong>Nuestro objetivo principal es simple pero poderoso:</strong>  ayudar a las <strong>
+                         panaderías, cafeterías, negocios de producción de alimentos y emprendedores</strong> 
+                        a tomar decisiones basadas en datos y hacer crecer sus negocios de forma inteligente. <br>
+                        ¡Dale a tu panadería el impulso que necesita con <strong>S.G.R</strong> 
+                        y empieza a conocer tus números de verdad!
+                    </p>
+                </div>
+                <div class="flip-back">
+                    <img src="foto1.svg" alt="Imagen Proyecto" class="flip-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="objetivos">
+            <h2>Objetivos del Proyecto</h2>
+            <ul>
+                <li>🤝 Facilitar la comunicación entre el equipo de trabajo.</li>
+                <li>💡 Ofrecer información para tomar mejores decisiones.</li>
+                <li>🛠️ Implementar herramientas tecnológicas accesibles.</li>
+                <li>📈 Ayudar a crecer el negocio de manera sostenible.</li>
+                <li>📊 Calcular las ganancias de forma clara y sencilla.</li>
+                <li>⚙️ Optimizar el proceso de producción y ventas.</li>
+                <li>🔍 Proporcionar datos precisos y actualizados.</li>
+            </ul>
+        </section>
+
+        <section class="cta">
+            <h2>¿Listo para transformar tu negocio?</h2>
+            <p>Contáctanos hoy mismo y descubre cómo <strong>S.G.R</strong> puede convertir tu panadería en un negocio más rentable y organizado.</p>
+
+            <!-- Botón sin link fijo, JS lo maneja -->
+            <a href="#" id="whatsapp-btn" class="btn whatsapp-btn">
+                💬 Escríbenos por WhatsApp
+            </a>
+            <a herf="#" id="paginaProyecto-btn" class="btn paginaProyecto-btn"> 
+                🌐 Visita nuestra página del proyecto
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Proyecto SGR | Diseñado para ayudar a las panaderías</p>
+    </footer>
+
+    <!-- JS para proteger el enlace -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const whatsappBtn = document.getElementById("whatsapp-btn");
+            const numeroSeguro = "573247113544"; // Número que NO se puede cambiar
+            const mensaje = "Quiero asesoria sobre S.G.R";
+            const urlWhatsApp = `https://wa.me/${numeroSeguro}?text=${encodeURIComponent(mensaje)}`;
+
+            whatsappBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.open(urlWhatsApp, "_blank");
+            });
+
+            // 🔒 Asegura que el href nunca se modifique
+            const observer = new MutationObserver(() => {
+                if (whatsappBtn.getAttribute("href") !== "#") {
+                    whatsappBtn.setAttribute("href", "#");
+                }
+            });
+
+            observer.observe(whatsappBtn, { attributes: true });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const paginaProyectoBtn = document.getElementById("paginaProyecto-btn");
+            const urlProyecto = "https://bakary2-front.vercel.app"; // URL del proyecto
+            const usrlaProyecto = `https://wa.me/${urlProyecto}`;
+
+            paginaProyectoBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.open(urlProyecto, "_blank");
+            });
+
+            // 🔒 Asegura que el href nunca se modifique
+            const observer = new MutationObserver(() => {
+                if (paginaProyectoBtn.getAttribute("href") !== "#") {
+                    paginaProyectoBtn.setAttribute("href", "#");
+                }
+            });
+            observer.observe(paginaProyectoBtn, { attributes: true });
+        });
+    </script>
+</body>
+</html>
